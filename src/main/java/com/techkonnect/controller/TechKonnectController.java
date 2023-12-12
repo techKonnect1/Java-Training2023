@@ -25,15 +25,15 @@ public class TechKonnectController {
 	
 	@Autowired
 	public TechKonnectService techKonnectService;
-	
+	Map<Integer, Student> studentMap = new HashMap<>();
+
 	
 	@GetMapping("/get/getStudents")
 	public String getTestMessage(
-								@RequestParam("name") String studentName,
 								@RequestParam("studentId") Integer studentId) {
 		
-		
-		return "Student Name : "+studentName + " Student Id : "+studentId;	
+		Student  student = studentMap.get(studentId);
+		return 	"Created Student : "+ student.getFirstName() + " Student Email :"+student.getEmail() +" Student Contact : "+ student.getContact();
 	}
 	
 	@GetMapping("/get/V2/getStudents")
@@ -56,8 +56,6 @@ public class TechKonnectController {
 	public String cStudent(@RequestBody Student student) {
 		
 		techKonnectService.createStudent(student);
-		student.setCreatedAt(LocalDateTime.now());
-		//student.setStudentId(15);
 		
 		return "Created Student : "+ student.getFirstName() + " Student Email :"+student.getEmail() +" Student Contact : "+ student.getContact();
 		
