@@ -1,5 +1,6 @@
 package com.techkonnect.controller;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.techkonnect.entity.Student;
 import com.techkonnect.java.List;
 import com.techkonnect.service.TechKonnectService;
 
@@ -39,25 +41,29 @@ public class TechKonnectController {
 								@RequestParam("name") String studentName,
 								@RequestParam("studentId") Integer studentId) {
 		
-		
 		return "Student Name : "+studentName + " Student Id : "+studentId;	
 	}
 	
 	@PostMapping("/post/updateStudents")
 	public String updateStudent() {
 		
-	
 		return "Updated Student : Test";
 	
 		
 	}
 	
 	@PutMapping("/put/createStudents")
-	public String cStudent(@RequestParam("studentId") Integer studentId,
-							@RequestBody Student student) {
-		return "Created Student : "+ student.getName() + " Student Email :"+student.getEmail() +" Student Contact : "+ student.getContactNo();
+	public String cStudent(@RequestBody Student student) {
+		
+		techKonnectService.createStudent(student);
+		student.setCreatedAt(LocalDateTime.now());
+		//student.setStudentId(15);
+		
+		return "Created Student : "+ student.getFirstName() + " Student Email :"+student.getEmail() +" Student Contact : "+ student.getContact();
 		
 	}
+	
+	
 
 	
 	

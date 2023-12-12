@@ -2,14 +2,14 @@ package com.techkonnect.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-import com.techkonnect.java.List;
+import com.techkonnect.entity.Student;
 
 @Repository
 public class TechKonnectRepository {
+	
+	@Autowired
+	public StudentRepository studentRepository;
 	
 	
 	public String getTestMessageRepository() {
@@ -18,6 +18,11 @@ public class TechKonnectRepository {
 		
 	}
 
+	
+	public void saveStudent(Student student) {
+		studentRepository.save(student);
+		
+	}
 	
 	
 }
