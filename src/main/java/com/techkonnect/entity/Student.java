@@ -32,6 +32,9 @@ public class Student {
     
     @Nonnull
     private String contact;
+    
+    @Nonnull
+    private String address;
 
     @Column(name = "created_at")
 	private LocalDateTime createdAt;
