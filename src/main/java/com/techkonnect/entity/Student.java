@@ -32,7 +32,10 @@ public class Student {
     
     @Nonnull
     private String contact;
-    
+
+	  @Nonnull
+    private String country;
+	
     @Nonnull
     private String address;
 
