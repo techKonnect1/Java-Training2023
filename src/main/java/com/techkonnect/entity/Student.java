@@ -14,13 +14,13 @@ import jakarta.persistence.Table;
 public class Student {
 	
 	
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "student_id")
+    @Column(name = "student_id")
     private Long studentId;
 
-	@Nonnull
-	@Column(name = "first_name")
+    @Nonnull
+    @Column(name = "first_name")
     private String firstName;
 
     @Nonnull
@@ -33,8 +33,6 @@ public class Student {
     @Nonnull
     private String contact;
 
-   @Nonnull
-    private String country;
 
     @Column(name = "created_at")
 	private LocalDateTime createdAt;
