@@ -33,6 +33,9 @@ public class Student {
     @Nonnull
     private String contact;
 
+   @Nonnull
+    private String country;
+
     @Column(name = "created_at")
 	private LocalDateTime createdAt;
     
