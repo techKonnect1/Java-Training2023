@@ -9,6 +9,6 @@ import com.techkonnect.entity.Student;
 public interface StudentRepository extends JpaRepository<Student, Long> {
 	
 	
-	List<Student> findByFirstNameAndLastName(Student student);
+	//List<Student> findByFirstNameAndLastName(Student student);
     // Additional custom queries can be defined here if needed
 }
