@@ -13,29 +13,27 @@ import com.techkonnect.repository.TechKonnectRepository;
 
 @Service
 public class TechKonnectService {
-	
+
 	@Autowired
 	public TechKonnectRepository techKonnectRepository;
-	
-	
+
+
 	public String getTestMessageService() {
-		
-		
+
+
 		return techKonnectRepository.getTestMessageRepository();
-		
+
 	}
-	
-	
+
+
 	public void createStudent(Student student) {
-		
+
 		techKonnectRepository.saveStudent(student);
-		
-		
+
 	}
 
-	
+		public Student getStudentById (Long studentId){
+			return techKonnectRepository.studentinfo(studentId);
+		}
+	}
 
-	
-	
-	
-}

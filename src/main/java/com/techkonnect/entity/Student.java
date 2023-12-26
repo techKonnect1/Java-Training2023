@@ -24,7 +24,7 @@ public class Student {
     private String firstName;
 
     @Nonnull
-    @Column(name = "last_name")
+    @Column(name = "last_na me")
     private String lastName;
 
     @Nonnull
@@ -96,6 +96,7 @@ public class Student {
 		this.contact = contact;
 	}
 
-	
+
 
 }
+

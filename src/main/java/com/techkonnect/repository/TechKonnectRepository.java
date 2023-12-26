@@ -23,6 +23,14 @@ public class TechKonnectRepository {
 		studentRepository.save(student);
 		
 	}
+	public Student studentinfo(Long studentId) {
+		return studentRepository.getReferenceById(studentId);
+
+
+
+	}
 	
 	
 }
+
+
